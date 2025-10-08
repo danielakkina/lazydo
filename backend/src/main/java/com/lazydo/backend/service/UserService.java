@@ -21,4 +21,9 @@ public class UserService {
     public User saveUser(User user) {
         return repo.save(user);
     }
+
+    public User getUserById(Long id) {
+        return repo.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
 }
